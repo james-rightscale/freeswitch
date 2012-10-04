@@ -1,0 +1,107 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apache2 (1.1.16)
+    build-essential (1.1.2)
+    yum (0.8.2)
+
+GIT
+  remote: https://github.com/coderanger/chef-collectd_plugins
+  ref: master
+  sha: d8e264da9ad982dc75978e48c14a9323db553378
+  specs:
+    collectd_plugins (1.0.0)
+      collectd (>= 0.0.0)
+
+GIT
+  remote: https://github.com/flaccid/chef-collectd
+  ref: master
+  sha: 5d951bbe4e046c0cc4b175e9785ffa784794e130
+  specs:
+    collectd (1.0.0)
+      apache2 (>= 0.0.0)
+
+GIT
+  remote: https://github.com/flaccid/cookbooks
+  path: cookbooks/resolver
+  ref: master
+  sha: a38843edbf29fddbdc33a8c59675c51e12920386
+  specs:
+    resolver (0.8.2)
+
+GIT
+  remote: https://github.com/flaccid/cookbooks
+  path: cookbooks/rightscale
+  ref: master
+  sha: a38843edbf29fddbdc33a8c59675c51e12920386
+  specs:
+    rightscale (0.0.1)
+      collectd (>= 0.0.0)
+
+GIT
+  remote: https://github.com/flaccid/cookbooks
+  path: cookbooks/system
+  ref: master
+  sha: a38843edbf29fddbdc33a8c59675c51e12920386
+  specs:
+    system (0.0.1)
+      cron (>= 0.0.0)
+
+GIT
+  remote: https://github.com/flaccid/postfix
+  ref: master
+  sha: 6729a86466a27983fc52807f6edddd88a70cf41c
+  specs:
+    postfix (1.2.0)
+
+GIT
+  remote: https://github.com/lazzarello/chef-twelvetone
+  path: cookbooks/freeswitch
+  ref: d96cf23c912ab31f65f262c11557d0e3a0a73b14
+  sha: d96cf23c912ab31f65f262c11557d0e3a0a73b14
+  specs:
+    freeswitch (0.1.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/cron
+  ref: master
+  sha: 930beae4cfeb07bb5193366d7c89014f76dbb9ea
+  specs:
+    cron (1.0.5)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/ntp
+  ref: master
+  sha: d2cf0b1e9a58c2016ed360f38ac08be266313de5
+  specs:
+    ntp (1.2.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/python
+  ref: master
+  sha: e7d06b4db5aec229a4737b8025482df013ebaefe
+  specs:
+    python (1.0.8)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/sudo
+  ref: master
+  sha: c73bb8f58d4fa54ac87375ccd9609fa09932d3a3
+  specs:
+    sudo (1.2.0)
+
+DEPENDENCIES
+  collectd (>= 0)
+  collectd_plugins (>= 0)
+  cron (>= 0)
+  freeswitch (>= 0)
+  ntp (>= 0)
+  postfix (>= 0)
+  python (>= 0)
+  resolver (>= 0)
+  rightscale (>= 0)
+  sudo (>= 0)
+  system (>= 0)
+

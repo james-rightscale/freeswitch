@@ -1,0 +1,29 @@
+{
+  "license": "Apache 2.0",
+  "version": "0.1.0",
+  "replacing": {
+  },
+  "groupings": {
+  },
+  "maintainer_email": "ops@example.com",
+  "description": "Installs/Configures freeswitch",
+  "recipes": {
+  },
+  "dependencies": {
+  },
+  "long_description": "= DESCRIPTION:\n\nThis cookbook will compile, install and configure Freeswitch to be an OSTN[https://guardianproject.info/wiki/OSTN_Compliance_Specification]\ncompliant SIP registrar[http://en.wikipedia.org/wiki/SIP_registrar#Network_elements] and ZRTP[http://en.wikipedia.org/wiki/ZRTP] media proxy. All signalling is encrypted and if\nthe endpoints support ZRTP, calling parties may encrypt their call with a peer\nto peer authentication process.\n\nTo handle the SIPS socket, this cookbook will make the system where it is run an\nSSL Certificate Authority. It is the operator's responsibility to distribute the\nroot certificate to all client applications. As of this writing, Freeswitch does\nnot support commercial SSL authorities like HTTPS web servers.\n\n= REQUIREMENTS:\n\n<b>Hostname</b>\n\nThe only dependency is a Fully Qualified Domain Name (FQDN[http://en.wikipedia.org/wiki/FQDN]). THIS IS CRUCIAL! The\ncookbook sets many parameters passed to scripts to this value, including the SIP registrar.\nIf you do not set a FQDN everything will break.\n\nUnfortunately, the process to do this is varied, poorly documented and\nmysterious. Basically, if you create a DNS A record for example.com pointing to\nyour IP address, you must configure the server so that the output of `hostname\n-f` is <i>exactly</i> the same name.\n\nOn my testbed system, I did this by setting /etc/hostname to the FQDN and adding\na line in /etc/hosts to the IP address/hostname pair. Reboot. Type `hostname\n-f`. If you get the output of the FQDN. You may run this cookbook.\n\n<b>Operating System</b>\n\nThe cookbook was written on Debian GNU/Linux 6 \"squeeze\". Package names are\nprobably dependent on Debian.\n\n= ATTRIBUTES: \n\n default[:freeswitch][:domain] = node[:fqdn]  \n default[:freeswitch][:git_uri] = \"git://git.freeswitch.org/freeswitch.git\"\n\n= USAGE:\n\n sudo -i\n cd ~\n git clone git://github.com/lazzarello/chef-twelvetone.git\n cd ~/chef-twelvetone/config\n chef-solo -c client.solo.rb -j config-freeswitch.json\n\nEverything is bundled into the default recipe. The recipe installed a script you\nmay use to create users in /usr/local/freeswitch/scripts/gen_users.\n",
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "maintainer": "Example Com",
+  "recommendations": {
+  },
+  "platforms": {
+  },
+  "name": "freeswitch",
+  "providing": {
+  },
+  "suggestions": {
+  }
+}
