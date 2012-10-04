@@ -4,9 +4,9 @@
 site 'http://community.opscode.com/api/v1'
 
 cookbook 'freeswitch',
-   :git => 'https://github.com/lazzarello/chef-twelvetone',
+   :git => 'https://github.com/flaccid/chef-twelvetone',
    :path => 'cookbooks/freeswitch',
-   :ref => 'd96cf23c912ab31f65f262c11557d0e3a0a73b14'   # due to https://github.com/flaccid/chef-twelvetone/commit/bcb28d79dab01211153ef97c093f02a4f4601b19 / master not being compat. with Chef 0.10.x
+   :ref => 'master'
    
 cookbook 'system',
    :git => 'https://github.com/flaccid/cookbooks',

@@ -22,6 +22,14 @@ GIT
       apache2 (>= 0.0.0)
 
 GIT
+  remote: https://github.com/flaccid/chef-twelvetone
+  path: cookbooks/freeswitch
+  ref: master
+  sha: 5d3e54bb678dd9ed6f4184e8d410b94daedbca0a
+  specs:
+    freeswitch (0.1.0)
+
+GIT
   remote: https://github.com/flaccid/cookbooks
   path: cookbooks/resolver
   ref: master
@@ -53,14 +61,6 @@ GIT
   sha: 6729a86466a27983fc52807f6edddd88a70cf41c
   specs:
     postfix (1.2.0)
-
-GIT
-  remote: https://github.com/lazzarello/chef-twelvetone
-  path: cookbooks/freeswitch
-  ref: d96cf23c912ab31f65f262c11557d0e3a0a73b14
-  sha: d96cf23c912ab31f65f262c11557d0e3a0a73b14
-  specs:
-    freeswitch (0.1.0)
 
 GIT
   remote: https://github.com/opscode-cookbooks/cron

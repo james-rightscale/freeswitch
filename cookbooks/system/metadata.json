@@ -1,58 +1,27 @@
 {
-  "version": "0.0.1",
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "replacing": {
-  },
-  "license": "Apache 2.0",
   "providing": {
   },
-  "description": "Installs/Configures system elements such as the hostname and timezone.",
-  "recipes": {
-    "system::hostname": "Sets the system hostname.",
-    "system::timezone": "Sets the system timezone.",
-    "system::default": "Set the system hostname and timezone."
-  },
-  "groupings": {
-  },
+  "maintainer_email": "chris@xhost.com.au",
+  "maintainer": "Chris Fordham",
   "suggestions": {
   },
-  "recommendations": {
+  "conflicting": {
   },
-  "dependencies": {
-    "cron": ">= 0.0.0"
-  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "platforms": {
-    "fedora": ">= 0.0.0",
-    "archlinux": ">= 0.0.0",
-    "centos": ">= 0.0.0",
-    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
     "ubuntu": ">= 0.0.0",
-    "redhat": ">= 0.0.0"
+    "archlinux": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "debian": ">= 0.0.0"
   },
-  "maintainer": "Chris Fordham",
-  "maintainer_email": "chris@xhost.com.au",
-  "name": "system",
+  "license": "Apache 2.0",
   "attributes": {
-    "system/short_hostname": {
-      "calculated": false,
-      "type": "string",
-      "description": "The short hostname that you would like this node to have, e.g. kryten",
-      "default": "localhost",
-      "recipes": [
-        "system::hostname",
-        "system::default"
-      ],
-      "choice": [
-
-      ],
-      "display_name": "Short Hostname",
-      "required": "recommended"
-    },
     "system/domain_name": {
-      "calculated": false,
-      "type": "string",
-      "description": "The domain name that you would like this node to have, e.g. domain.suf. Note: Only set a valid domain name to satisfy the resolution of a FQDN; use ignore:ignore for no domain name.",
       "default": "localdomain",
+      "type": "string",
+      "required": "recommended",
       "recipes": [
         "system::hostname",
         "system::default"
@@ -60,14 +29,29 @@
       "choice": [
 
       ],
+      "calculated": false,
       "display_name": "Domain Name",
-      "required": "recommended"
+      "description": "The domain name that you would like this node to have, e.g. domain.suf. Note: Only set a valid domain name to satisfy the resolution of a FQDN; use ignore:ignore for no domain name."
+    },
+    "system/short_hostname": {
+      "default": "localhost",
+      "type": "string",
+      "required": "recommended",
+      "recipes": [
+        "system::hostname",
+        "system::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "display_name": "Short Hostname",
+      "description": "The short hostname that you would like this node to have, e.g. kryten"
     },
     "system/timezone": {
-      "calculated": false,
-      "type": "string",
-      "description": "Sets the system time to the timezone of the specified input, which must be a valid zoneinfo/tz database entry.  If the input is 'unset' the timezone will use the 'localtime' that's defined in your RightScale account under Settings -> User -> Preferences tab.  You can find a list of valid examples from the timezone pulldown bar in the Preferences tab. The server will not be updated for daylight savings time.  Ex: US/Pacific, US/Eastern",
       "default": "UTC",
+      "type": "string",
+      "required": "optional",
       "recipes": [
         "system::timezone",
         "system::default"
@@ -142,10 +126,26 @@
         "UTC",
         "localtime"
       ],
+      "calculated": false,
       "display_name": "Timezone",
-      "required": "optional"
+      "description": "Sets the system time to the timezone of the specified input, which must be a valid zoneinfo/tz database entry.  If the input is 'unset' the timezone will use the 'localtime' that's defined in your RightScale account under Settings -> User -> Preferences tab.  You can find a list of valid examples from the timezone pulldown bar in the Preferences tab. The server will not be updated for daylight savings time.  Ex: US/Pacific, US/Eastern"
     }
   },
-  "conflicting": {
-  }
+  "recommendations": {
+  },
+  "name": "system",
+  "replacing": {
+  },
+  "dependencies": {
+    "cron": ">= 0.0.0"
+  },
+  "version": "0.0.1",
+  "recipes": {
+    "system::timezone": "Sets the system timezone.",
+    "system::hostname": "Sets the system hostname.",
+    "system::default": "Set the system hostname and timezone."
+  },
+  "groupings": {
+  },
+  "description": "Installs/Configures system elements such as the hostname and timezone."
 }
