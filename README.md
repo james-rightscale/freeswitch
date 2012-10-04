@@ -1,0 +1,4 @@
+freeswitch
+==========
+
+FreeSWITCH (ServerTemplate) Blueprint
